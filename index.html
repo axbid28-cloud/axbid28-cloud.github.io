@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Development Plan for TSE</title>
+    <style>
+        :root {
+            --color-primary: #2c5282;
+            --color-secondary: #4a6fa5;
+            --color-accent: #5a8fc4;
+            --color-dark: #1a202c;
+            --color-light: #f7fafc;
+            --color-border: #e2e8f0;
+            --color-success: #48bb78;
+            --color-text: #2d3748;
+            --color-text-light: #718096;
+            --spacing-unit: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf0 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 3);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+        }
+
+        .intro-section {
+            background: white;
+            padding: calc(var(--spacing-unit) * 5);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .intro-section h2 {
+            color: var(--color-primary);
+            font-size: 1.875rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .intro-section p {
+            color: var(--color-text-light);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .path-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+
+        .path-card {
+            background: white;
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-border);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .path-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-accent);
+        }
+
+        .path-card.active {
+            border-color: var(--color-primary);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+        }
+
+        .path-card h3 {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .path-card p {
+            color: var(--color-text-light);
+            font-size: 0.9375rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .path-card .duration {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .roadmap-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .roadmap-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .roadmap-section {
+            background: white;
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 5);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .roadmap-section h2 {
+            color: var(--color-primary);
+            font-size: 1.875rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            padding-bottom: calc(var(--spacing-unit) * 2);
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .roadmap-section h3 {
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+            margin-top: calc(var(--spacing-unit) * 4);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .roadmap-section h4 {
+            color: var(--color-text);
+            font-size: 1.25rem;
+            margin-top: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .phase {
+            margin-bottom: calc(var(--spacing-unit) * 5);
+            padding-left: calc(var(--spacing-unit) * 3);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+            border-radius: 8px;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            margin-left: calc(var(--spacing-unit) * -3);
+        }
+
+        .phase-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.375rem;
+        }
+
+        .phase-header .timeline {
+            font-size: 0.9375rem;
+            opacity: 0.95;
+            margin-top: calc(var(--spacing-unit) * 1);
+        }
+
+        .checklist {
+            list-style: none;
+            margin: calc(var(--spacing-unit) * 2) 0;
+        }
+
+        .checklist li {
+            padding: calc(var(--spacing-unit) * 2);
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            background: var(--color-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checklist li:hover {
+            background: #e6f0fa;
+            transform: translateX(4px);
+        }
+
+        .checklist li input[type="checkbox"] {
+            margin-right: calc(var(--spacing-unit) * 2);
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist li.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+
+        .key-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .skill-card h4 {
+            color: var(--color-primary);
+            font-size: 1.125rem;
+            margin: 0 0 calc(var(--spacing-unit) * 1.5) 0;
+        }
+
+        .skill-card p {
+            color: var(--color-text-light);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .resources {
+            background: #fffaf0;
+            border: 2px solid #fbd38d;
+            border-radius: 8px;
+            padding: calc(var(--spacing-unit) * 3);
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        .resources h4 {
+            color: #c05621;
+            margin-top: 0;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .resources ul {
+            margin-left: calc(var(--spacing-unit) * 3);
+        }
+
+        .resources li {
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            color: var(--color-text);
+        }
+
+        .resources a {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .resources a:hover {
+            border-bottom-color: #2c5282;
+        }
+
+        .milestones {
+            background: #f0fff4;
+            border: 2px solid #9ae6b4;
+            border-radius: 8px;
+            padding: calc(var(--spacing-unit) * 3);
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        .milestones h4 {
+            color: #22543d;
+            margin-top: 0;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            padding: calc(var(--spacing-unit) * 2);
+            background: white;
+            border-radius: 6px;
+        }
+
+        .milestone-item::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: var(--color-success);
+            color: white;
+            border-radius: 50%;
+            margin-right: calc(var(--spacing-unit) * 2);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: calc(var(--spacing-unit) * 3) 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table th {
+            background: var(--color-primary);
+            color: white;
+            padding: calc(var(--spacing-unit) * 2);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: calc(var(--spacing-unit) * 2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--color-light);
+        }
+
+        .footer {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 3);
+            color: var(--color-text-light);
+            font-size: 0.9375rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e6f0fa 0%, #d4e7f7 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: calc(var(--spacing-unit) * 3);
+            margin: calc(var(--spacing-unit) * 3) 0;
+            border-radius: 8px;
+        }
+
+        .tip-box strong {
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.875rem;
+            }
+
+            .path-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .key-skills {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Career Development Plan for TSE</h1>
+        <p>Your Strategic Roadmap from Technical Support Engineer to Leadership Excellence</p>
+    </div>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>Welcome to Your Career Journey</h2>
+            <p>As a Technical Support Engineer, you've built a strong foundation in technical problem-solving, customer communication, and systems understanding. This comprehensive career development plan provides three distinct pathways to leadership roles, each leveraging your technical expertise while developing new competencies in management, strategy, and leadership.</p>
+            <p>Each roadmap is carefully structured with phases, checklists, key skills, certifications, and curated resources to guide your transition. Select your desired career path below to explore the detailed roadmap tailored for your goal.</p>
+        </div>
+
+        <div class="path-selector">
+            <div class="path-card" onclick="showRoadmap('pm')">
+                <h3>Project Manager</h3>
+                <p>Lead cross-functional projects, manage timelines, budgets, and deliver strategic initiatives while coordinating diverse teams.</p>
+                <span class="duration">18-24 months</span>
+            </div>
+
+            <div class="path-card" onclick="showRoadmap('program')">
+                <h3>Program Manager</h3>
+                <p>Oversee multiple interconnected projects, align with business strategy, and drive large-scale organizational change.</p>
+                <span class="duration">24-36 months</span>
+            </div>
+
+            <div class="path-card" onclick="showRoadmap('tsm')">
+                <h3>Technical Support Manager</h3>
+                <p>Lead and develop support teams, drive operational excellence, and bridge technical operations with business objectives.</p>
+                <span class="duration">12-18 months</span>
+            </div>
+        </div>
+
+        <!-- Project Manager Roadmap -->
+        <div id="pm-roadmap" class="roadmap-content">
+            <div class="roadmap-section">
+                <h2>Roadmap: Technical Support Engineer → Project Manager</h2>
+                
+                <p><strong>Overview:</strong> Project Managers orchestrate the planning, execution, and delivery of individual projects. This transition leverages your technical troubleshooting skills, customer empathy, and cross-functional collaboration experience while building capabilities in scope management, stakeholder coordination, and strategic planning.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Technical Support Engineer</th>
+                            <th>Project Manager</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Focus</strong></td>
+                            <td>Resolving customer technical issues</td>
+                            <td>Delivering projects on time, within budget, meeting scope</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Horizon</strong></td>
+                            <td>Immediate (ticket-by-ticket)</td>
+                            <td>Short to medium-term (project lifecycle)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Stakeholders</strong></td>
+                            <td>Customers, engineering teams</td>
+                            <td>Executives, cross-functional teams, clients, vendors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Success Metrics</strong></td>
+                            <td>Resolution time, customer satisfaction, SLA compliance</td>
+                            <td>On-time delivery, budget adherence, scope completion, stakeholder satisfaction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decision Authority</strong></td>
+                            <td>Technical solutions within scope</td>
+                            <td>Resource allocation, timeline adjustments, risk mitigation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 1: Foundation Building (Months 1-6)</h3>
+                        <div class="timeline">Duration: 6 months | Effort: 10-15 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Develop foundational PM knowledge and begin applying concepts</h4>
+
+                    <div class="tip-box">
+                        <strong>Pro Tip:</strong>
+                        Start by shadowing existing project managers in your organization. Observe their planning meetings, status updates, and stakeholder interactions to understand the rhythm of project work.
+                    </div>
+
+                    <h4>Core Competencies to Build</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Project Planning</h4>
+                            <p>Work breakdown structures, Gantt charts, critical path analysis, resource allocation</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Stakeholder Management</h4>
+                            <p>Identification, analysis, communication planning, expectation management</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Risk Management</h4>
+                            <p>Risk identification, assessment, mitigation planning, contingency strategies</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Communication</h4>
+                            <p>Status reporting, presentations, meeting facilitation, conflict resolution</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Complete Google Project Management Professional Certificate (Coursera) or equivalent foundational PM course</span></li>
+                        <li><input type="checkbox"> <span>Read "A Guide to the Project Management Body of Knowledge (PMBOK® Guide)" - foundational chapters</span></li>
+                        <li><input type="checkbox"> <span>Shadow 2-3 project managers in your organization; attend their planning and review meetings</span></li>
+                        <li><input type="checkbox"> <span>Volunteer to coordinate a small internal team project (e.g., knowledge base update, process improvement)</span></li>
+                        <li><input type="checkbox"> <span>Learn a PM tool: Microsoft Project, Jira, Asana, or Monday.com - complete introductory tutorials</span></li>
+                        <li><input type="checkbox"> <span>Create a work breakdown structure (WBS) for a hypothetical support improvement project</span></li>
+                        <li><input type="checkbox"> <span>Join PMI (Project Management Institute) as a member; access free resources and webinars</span></li>
+                        <li><input type="checkbox"> <span>Identify 2-3 mentors: current PMs willing to provide guidance and answer questions</span></li>
+                    </ul>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.coursera.org/professional-certificates/google-project-management" target="_blank">Google Project Management Professional Certificate - Coursera</a></li>
+                            <li><a href="https://www.pmi.org/pmbok-guide-standards/foundational" target="_blank">PMBOK® Guide - Project Management Institute</a></li>
+                            <li><a href="https://www.edx.org/learn/project-management" target="_blank">Project Management Courses - edX</a></li>
+                            <li><a href="https://www.projectmanagement.com" target="_blank">ProjectManagement.com - Articles and Community</a></li>
+                            <li><a href="https://asana.com/resources/project-management-101" target="_blank">Asana Project Management 101 Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 2: Practical Application & Skill Development (Months 7-12)</h3>
+                        <div class="timeline">Duration: 6 months | Effort: 15-20 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Lead small projects and build demonstrable PM experience</h4>
+
+                    <h4>Advanced Skills Development</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Budget Management</h4>
+                            <p>Cost estimation, budget tracking, variance analysis, financial reporting</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Agile Methodology</h4>
+                            <p>Scrum framework, sprint planning, retrospectives, backlog management</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Change Management</h4>
+                            <p>Change request process, impact assessment, stakeholder buy-in</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Quality Management</h4>
+                            <p>Quality standards, testing strategies, acceptance criteria, deliverable reviews</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Obtain Certified Associate in Project Management (CAPM®) certification from PMI</span></li>
+                        <li><input type="checkbox"> <span>Lead 2-3 small cross-functional projects (e.g., system migration, tool implementation, process redesign)</span></li>
+                        <li><input type="checkbox"> <span>Complete Agile/Scrum training and earn Scrum Master certification (CSM or PSM I)</span></li>
+                        <li><input type="checkbox"> <span>Create detailed project plans with timelines, resources, budgets, and risk registers for each project</span></li>
+                        <li><input type="checkbox"> <span>Conduct weekly status meetings and produce formal status reports for stakeholders</span></li>
+                        <li><input type="checkbox"> <span>Build a project portfolio documenting your projects, outcomes, and lessons learned</span></li>
+                        <li><input type="checkbox"> <span>Participate in PMI local chapter meetings and networking events (online or in-person)</span></li>
+                        <li><input type="checkbox"> <span>Master advanced PM tool features: dashboards, reporting, resource management, dependencies</span></li>
+                        <li><input type="checkbox"> <span>Study for PMP® certification: complete 35 contact hours and document 36 months project experience</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Successfully deliver 2 projects on time and within budget</div>
+                        <div class="milestone-item">Earn CAPM® or equivalent entry-level PM certification</div>
+                        <div class="milestone-item">Receive positive stakeholder feedback on project leadership</div>
+                        <div class="milestone-item">Build portfolio with 3+ documented projects</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank">CAPM® Certification - PMI</a></li>
+                            <li><a href="https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" target="_blank">Certified ScrumMaster (CSM) - Scrum Alliance</a></li>
+                            <li><a href="https://www.udemy.com/topic/project-management/" target="_blank">Project Management Courses - Udemy</a></li>
+                            <li><a href="https://www.linkedin.com/learning/topics/project-management" target="_blank">Project Management Learning Paths - LinkedIn Learning</a></li>
+                            <li><a href="https://www.atlassian.com/agile/project-management" target="_blank">Agile Project Management Guide - Atlassian</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 3: Certification & Transition (Months 13-18)</h3>
+                        <div class="timeline">Duration: 6 months | Effort: 15-20 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Earn PMP® certification and secure PM role</h4>
+
+                    <h4>Leadership & Strategic Skills</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Strategic Thinking</h4>
+                            <p>Business alignment, value delivery, strategic planning, portfolio contribution</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Leadership</h4>
+                            <p>Team motivation, conflict resolution, delegation, decision-making under uncertainty</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Business Acumen</h4>
+                            <p>Financial literacy, market awareness, competitive analysis, ROI calculation</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Vendor Management</h4>
+                            <p>Contract negotiation, vendor selection, performance monitoring, relationship management</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Pass PMP® (Project Management Professional) certification exam</span></li>
+                        <li><input type="checkbox"> <span>Lead at least one medium-complexity project ($50K+ budget or 6+ month duration)</span></li>
+                        <li><input type="checkbox"> <span>Request formal PM responsibilities: update job title internally or take Project Coordinator role</span></li>
+                        <li><input type="checkbox"> <span>Develop expertise in 2-3 specific PM methodologies: Waterfall, Agile, Hybrid, PRINCE2, or Lean</span></li>
+                        <li><input type="checkbox"> <span>Create a comprehensive PM resume highlighting transferable skills and completed projects</span></li>
+                        <li><input type="checkbox"> <span>Update LinkedIn profile with PM focus; publish 2-3 articles on PM topics to demonstrate thought leadership</span></li>
+                        <li><input type="checkbox"> <span>Apply for Project Manager, Associate PM, or Project Coordinator roles (internal and external)</span></li>
+                        <li><input type="checkbox"> <span>Prepare for PM interviews: study behavioral questions, case studies, and situational scenarios</span></li>
+                        <li><input type="checkbox"> <span>Build relationships with hiring managers and recruiters specializing in PM roles</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Earn PMP® certification</div>
+                        <div class="milestone-item">Deliver medium-complexity project successfully</div>
+                        <div class="milestone-item">Secure Project Manager or equivalent role</div>
+                        <div class="milestone-item">Receive internal recognition or promotion to PM track</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank">PMP® Certification - PMI</a></li>
+                            <li><a href="https://www.coursera.org/professional-certificates/applied-project-management" target="_blank">Applied Project Management Certificate - Coursera</a></li>
+                            <li><a href="https://www.prepcast.com/pmp-exam" target="_blank">PMP Exam Simulator - PM PrepCast</a></li>
+                            <li><a href="https://www.projectmanager.com/blog" target="_blank">ProjectManager Blog - Tips and Best Practices</a></li>
+                            <li><a href="https://www.glassdoor.com/Interview/project-manager-interview-questions-SRCH_KO0,15.htm" target="_blank">PM Interview Questions - Glassdoor</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 4: Career Acceleration (Months 19-24)</h3>
+                        <div class="timeline">Duration: 6 months | Ongoing professional development</div>
+                    </div>
+
+                    <h4>Goal: Excel in PM role and position for senior advancement</h4>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Establish reputation for delivering complex projects on time and within budget</span></li>
+                        <li><input type="checkbox"> <span>Pursue advanced specializations: Agile PM (PMI-ACP), Risk Management (PMI-RMP), or industry-specific certifications</span></li>
+                        <li><input type="checkbox"> <span>Mentor junior PMs or support engineers aspiring to transition into PM roles</span></li>
+                        <li><input type="checkbox"> <span>Contribute to PM community: speak at conferences, publish articles, lead PMI chapter activities</span></li>
+                        <li><input type="checkbox"> <span>Expand project portfolio to include diverse project types and industries</span></li>
+                        <li><input type="checkbox"> <span>Build executive presence: improve presentation skills, strategic communication, board-level reporting</span></li>
+                        <li><input type="checkbox"> <span>Explore paths to Senior PM, Program Manager, or PMO (Project Management Office) roles</span></li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Long-Term Career Path:</strong>
+                        Project Manager → Senior Project Manager → Program Manager → Director of PMO → VP of Project Management or Operations
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/certifications/agile-acp" target="_blank">PMI-ACP® (Agile Certified Practitioner) - PMI</a></li>
+                            <li><a href="https://www.pmi.org/certifications/risk-management-rmp" target="_blank">PMI-RMP® (Risk Management Professional) - PMI</a></li>
+                            <li><a href="https://www.axelos.com/certifications/prince2" target="_blank">PRINCE2® Certification - AXELOS</a></li>
+                            <li><a href="https://www.ted.com/topics/leadership" target="_blank">Leadership Talks - TED</a></li>
+                            <li><a href="https://hbr.org/topic/project-management" target="_blank">Harvard Business Review - Project Management Articles</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program Manager Roadmap -->
+        <div id="program-roadmap" class="roadmap-content">
+            <div class="roadmap-section">
+                <h2>Roadmap: Technical Support Engineer → Program Manager</h2>
+                
+                <p><strong>Overview:</strong> Program Managers operate at a higher strategic level, overseeing multiple interconnected projects (programs) that collectively deliver business objectives. This role requires strong strategic thinking, executive communication, organizational change management, and the ability to align technical initiatives with business strategy. The transition leverages your systems thinking and cross-team collaboration experience while building enterprise-level leadership capabilities.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Technical Support Engineer</th>
+                            <th>Program Manager</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Focus</strong></td>
+                            <td>Resolving individual customer issues</td>
+                            <td>Delivering strategic business outcomes through multiple projects</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scope</strong></td>
+                            <td>Individual tickets and escalations</td>
+                            <td>Multiple interdependent projects and initiatives</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Horizon</strong></td>
+                            <td>Immediate to short-term</td>
+                            <td>Long-term (quarters to years)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Stakeholders</strong></td>
+                            <td>Customers, engineering teams</td>
+                            <td>C-suite executives, business unit leaders, external partners</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Success Metrics</strong></td>
+                            <td>Ticket resolution, SLA compliance</td>
+                            <td>Business value delivery, strategic alignment, ROI, organizational transformation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leadership Scope</strong></td>
+                            <td>Influence within support team</td>
+                            <td>Lead multiple project managers and cross-functional teams</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 1: Foundation & Project Management Mastery (Months 1-9)</h3>
+                        <div class="timeline">Duration: 9 months | Effort: 15-20 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Build strong PM foundation as prerequisite to program management</h4>
+
+                    <div class="tip-box">
+                        <strong>Critical Context:</strong>
+                        Program management is typically not an entry-level transition from support engineering. You must first establish credibility as a Project Manager before advancing to Program Manager. This phase focuses on accelerated PM skill development.
+                    </div>
+
+                    <h4>Core Competencies to Build</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Project Management Fundamentals</h4>
+                            <p>All PM core skills: planning, execution, risk management, stakeholder management</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Business Strategy</h4>
+                            <p>Strategic planning, business case development, value stream mapping, OKRs</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Financial Management</h4>
+                            <p>Business finance, ROI analysis, portfolio budgeting, cost-benefit analysis</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Systems Thinking</h4>
+                            <p>Understanding interdependencies, holistic problem-solving, organizational dynamics</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Complete comprehensive PM certification: PMP®, PRINCE2 Practitioner, or Google PM Certificate</span></li>
+                        <li><input type="checkbox"> <span>Read "The Standard for Program Management" by PMI - understand program vs. project distinction</span></li>
+                        <li><input type="checkbox"> <span>Lead 3-4 projects successfully as Project Manager or Project Lead</span></li>
+                        <li><input type="checkbox"> <span>Complete business strategy course (MBA-level or equivalent): Porter's Five Forces, SWOT, competitive analysis</span></li>
+                        <li><input type="checkbox"> <span>Take financial management for non-financial managers course (Coursera, edX, or corporate training)</span></li>
+                        <li><input type="checkbox"> <span>Shadow or interview 2-3 Program Managers; understand their daily responsibilities and strategic focus</span></li>
+                        <li><input type="checkbox"> <span>Volunteer to coordinate multiple related projects; practice managing dependencies</span></li>
+                        <li><input type="checkbox"> <span>Build expertise in strategic planning frameworks: OKRs, Balanced Scorecard, Strategy Maps</span></li>
+                    </ul>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/pmbok-guide-standards/framework/program-management" target="_blank">The Standard for Program Management - PMI</a></li>
+                            <li><a href="https://www.coursera.org/learn/wharton-finance" target="_blank">Introduction to Corporate Finance - Wharton/Coursera</a></li>
+                            <li><a href="https://www.edx.org/learn/business-strategy" target="_blank">Business Strategy Courses - edX</a></li>
+                            <li><a href="https://www.tpmacademyai.com" target="_blank">Technical Program Management Resources - TPM Academy</a></li>
+                            <li><a href="https://hbr.org/topic/strategy" target="_blank">Strategy Articles - Harvard Business Review</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 2: Program Management Preparation (Months 10-18)</h3>
+                        <div class="timeline">Duration: 9 months | Effort: 20+ hours/week</div>
+                    </div>
+
+                    <h4>Goal: Develop program-level thinking and leadership capabilities</h4>
+
+                    <h4>Advanced Program Management Skills</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Portfolio Management</h4>
+                            <p>Portfolio prioritization, resource optimization, strategic alignment, value maximization</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Organizational Change</h4>
+                            <p>Change management, stakeholder influence, cultural transformation, adoption strategies</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Executive Communication</h4>
+                            <p>Board-level presentations, executive summaries, strategic storytelling, influence without authority</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Cross-Functional Leadership</h4>
+                            <p>Leading without direct reports, matrix management, political navigation, coalition building</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Earn Program Management Professional (PgMP®) certification from PMI</span></li>
+                        <li><input type="checkbox"> <span>Secure role as Senior Project Manager or Associate Program Manager</span></li>
+                        <li><input type="checkbox"> <span>Lead a small program: 3+ interdependent projects with shared strategic objective</span></li>
+                        <li><input type="checkbox"> <span>Complete change management certification: Prosci ADKAR, Certified Change Management Professional</span></li>
+                        <li><input type="checkbox"> <span>Develop executive presentation skills: Toastmasters, executive communication courses, executive coaching</span></li>
+                        <li><input type="checkbox"> <span>Create program governance framework: steering committees, RACI matrices, escalation paths</span></li>
+                        <li><input type="checkbox"> <span>Master program management tools: portfolio dashboards, program roadmaps, benefits realization tracking</span></li>
+                        <li><input type="checkbox"> <span>Build business case for a hypothetical program: financial modeling, ROI projection, risk assessment</span></li>
+                        <li><input type="checkbox"> <span>Network with Program Managers in your industry; join TPM (Technical Program Manager) communities</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Earn PgMP® or equivalent program management certification</div>
+                        <div class="milestone-item">Successfully coordinate 3+ projects as unified program</div>
+                        <div class="milestone-item">Present strategic initiative to executive leadership</div>
+                        <div class="milestone-item">Demonstrate measurable business value delivery</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/certifications/program-management-pgmp" target="_blank">PgMP® Certification - PMI</a></li>
+                            <li><a href="https://www.prosci.com/solutions/training-programs/change-management-certification" target="_blank">Prosci Change Management Certification</a></li>
+                            <li><a href="https://www.linkedin.com/learning/paths/become-a-program-manager" target="_blank">Become a Program Manager - LinkedIn Learning</a></li>
+                            <li><a href="https://www.coursera.org/learn/uva-darden-leading-teams" target="_blank">Leading Teams - University of Virginia/Coursera</a></li>
+                            <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/how-we-help-clients" target="_blank">McKinsey Strategy Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 3: Program Leadership & Transition (Months 19-30)</h3>
+                        <div class="timeline">Duration: 12 months | Effort: 20+ hours/week</div>
+                    </div>
+
+                    <h4>Goal: Lead large programs and secure Program Manager role</h4>
+
+                    <h4>Strategic Leadership Skills</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Strategic Vision</h4>
+                            <p>Vision articulation, strategic roadmapping, long-term planning, innovation leadership</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Benefits Realization</h4>
+                            <p>Benefits mapping, value tracking, outcome measurement, ROI reporting</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Risk & Dependency Management</h4>
+                            <p>Enterprise risk assessment, cross-project dependencies, escalation management</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>People Leadership</h4>
+                            <p>Leading project managers, team development, performance management, talent cultivation</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Lead medium to large program: 5+ projects, $500K+ budget, 12+ month duration</span></li>
+                        <li><input type="checkbox"> <span>Manage program governance: establish steering committee, conduct program reviews, report to executives</span></li>
+                        <li><input type="checkbox"> <span>Coordinate 3+ project managers; provide guidance, resolve conflicts, unblock issues</span></li>
+                        <li><input type="checkbox"> <span>Develop program charter, roadmap, and benefits realization plan aligned with business strategy</span></li>
+                        <li><input type="checkbox"> <span>Build comprehensive program portfolio documenting outcomes, business value, lessons learned</span></li>
+                        <li><input type="checkbox"> <span>Update resume and LinkedIn to reflect program management focus and achievements</span></li>
+                        <li><input type="checkbox"> <span>Apply for Program Manager roles internally and externally</span></li>
+                        <li><input type="checkbox"> <span>Prepare for program management interviews: strategic case studies, leadership scenarios, stakeholder management</span></li>
+                        <li><input type="checkbox"> <span>Consider MBA or Executive Master's in Business/Technology Management for strategic credibility</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Lead enterprise-level program successfully</div>
+                        <div class="milestone-item">Secure Program Manager or Technical Program Manager role</div>
+                        <div class="milestone-item">Deliver measurable business transformation or strategic initiative</div>
+                        <div class="milestone-item">Establish reputation as strategic leader and change agent</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.amazon.com/Program-Management-Professional-Certification-Study/dp/1119564034" target="_blank">PgMP® Exam Practice Test and Study Guide - Wiley</a></li>
+                            <li><a href="https://www.edx.org/learn/business-administration" target="_blank">Executive MBA Programs - edX</a></li>
+                            <li><a href="https://www.glassdoor.com/Interview/program-manager-interview-questions-SRCH_KO0,15.htm" target="_blank">Program Manager Interview Questions - Glassdoor</a></li>
+                            <li><a href="https://www.gartner.com/en/insights/portfolio-and-program-management" target="_blank">Program Management Insights - Gartner</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 4: Excellence & Advancement (Months 31-36)</h3>
+                        <div class="timeline">Duration: 6 months | Ongoing professional development</div>
+                    </div>
+
+                    <h4>Goal: Excel as Program Manager and position for senior leadership</h4>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Establish track record of delivering strategic business outcomes through program leadership</span></li>
+                        <li><input type="checkbox"> <span>Mentor Project Managers and support engineers aspiring to PM/Program Manager roles</span></li>
+                        <li><input type="checkbox"> <span>Contribute to industry: speak at conferences, publish thought leadership, lead community initiatives</span></li>
+                        <li><input type="checkbox"> <span>Build executive network: participate in strategic planning, contribute to business strategy</span></li>
+                        <li><input type="checkbox"> <span>Explore advancement paths: Senior Program Manager, Portfolio Manager, Director of PMO, VP of Programs</span></li>
+                        <li><input type="checkbox"> <span>Consider specialization: Digital Transformation, IT Program Management, Product Program Management</span></li>
+                        <li><input type="checkbox"> <span>Develop C-suite executive presence and strategic communication mastery</span></li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Long-Term Career Path:</strong>
+                        Program Manager → Senior Program Manager → Director of Program Management → VP of Strategic Programs → Chief of Staff or C-Level Executive
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.pmi.org/certifications/portfolio-management-pfmp" target="_blank">PfMP® (Portfolio Management Professional) - PMI</a></li>
+                            <li><a href="https://www.axelos.com/certifications/msp" target="_blank">MSP® (Managing Successful Programmes) - AXELOS</a></li>
+                            <li><a href="https://execed.mit.edu" target="_blank">MIT Executive Education Programs</a></li>
+                            <li><a href="https://knowledge.wharton.upenn.edu" target="_blank">Wharton Business School - Strategy Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Support Manager Roadmap -->
+        <div id="tsm-roadmap" class="roadmap-content">
+            <div class="roadmap-section">
+                <h2>Roadmap: Technical Support Engineer → Technical Support Manager</h2>
+                
+                <p><strong>Overview:</strong> Technical Support Managers lead teams of support specialists, drive operational excellence, develop support strategy, and serve as the bridge between technical operations and business objectives. This is often the most natural transition from TSE, leveraging your deep domain expertise, customer empathy, and understanding of support workflows while building people leadership and operational management capabilities.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Technical Support Engineer</th>
+                            <th>Technical Support Manager</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Focus</strong></td>
+                            <td>Resolving customer technical issues</td>
+                            <td>Leading team performance, operational excellence, strategy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Activities</strong></td>
+                            <td>Troubleshooting, customer communication, technical escalations</td>
+                            <td>Team coaching, process improvement, metrics analysis, stakeholder management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Success Metrics</strong></td>
+                            <td>Personal ticket resolution, SLA compliance, customer satisfaction</td>
+                            <td>Team performance, CSAT/NPS, first-contact resolution, operational efficiency</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Responsibility Scope</strong></td>
+                            <td>Individual contributor</td>
+                            <td>Team of 5-15+ support engineers, budget, tools, processes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decision Authority</strong></td>
+                            <td>Technical resolution within scope</td>
+                            <td>Hiring, performance management, escalation policies, resource allocation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Allocation</strong></td>
+                            <td>90% technical work, 10% administrative</td>
+                            <td>20% technical, 80% leadership/management/strategy</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 1: Leadership Foundation (Months 1-4)</h3>
+                        <div class="timeline">Duration: 4 months | Effort: 10-15 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Build foundational people leadership and management skills</h4>
+
+                    <div class="tip-box">
+                        <strong>Pro Tip:</strong>
+                        Technical Support Manager is the most direct path from TSE. You already possess the technical expertise and customer understanding; focus on developing people leadership, coaching, and operational management skills.
+                    </div>
+
+                    <h4>Core Competencies to Build</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>People Leadership</h4>
+                            <p>Team motivation, coaching, feedback delivery, conflict resolution, delegation</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Performance Management</h4>
+                            <p>Goal setting, performance reviews, development plans, accountability frameworks</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Operational Excellence</h4>
+                            <p>Process optimization, metrics analysis, SLA management, workflow design</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Communication</h4>
+                            <p>Team meetings, one-on-ones, executive reporting, cross-functional collaboration</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Complete "From Technical Expert to People Leader" or equivalent management fundamentals course</span></li>
+                        <li><input type="checkbox"> <span>Read "The Manager's Path" by Camille Fournier or "First, Break All the Rules" by Marcus Buckingham</span></li>
+                        <li><input type="checkbox"> <span>Volunteer for team lead or senior engineer role; mentor 2-3 junior support engineers</span></li>
+                        <li><input type="checkbox"> <span>Shadow your current manager: observe one-on-ones, team meetings, performance reviews, escalations</span></li>
+                        <li><input type="checkbox"> <span>Complete course on giving and receiving feedback (Crucial Conversations, Radical Candor framework)</span></li>
+                        <li><input type="checkbox"> <span>Develop expertise in support metrics: analyze CSAT, first-contact resolution, average handle time, ticket trends</span></li>
+                        <li><input type="checkbox"> <span>Lead one process improvement initiative: knowledge base update, workflow optimization, tool enhancement</span></li>
+                        <li><input type="checkbox"> <span>Attend management and leadership webinars/workshops focused on first-time managers</span></li>
+                    </ul>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/learning/paths/become-a-manager" target="_blank">Become a Manager Learning Path - LinkedIn Learning</a></li>
+                            <li><a href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897" target="_blank">The Manager's Path by Camille Fournier</a></li>
+                            <li><a href="https://www.radicalcandor.com" target="_blank">Radical Candor - Leadership Framework</a></li>
+                            <li><a href="https://www.coursera.org/learn/managing-people-teams" target="_blank">Managing People and Teams - Coursera</a></li>
+                            <li><a href="https://www.supportops.co" target="_blank">SupportOps - Technical Support Operations Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 2: Practical Leadership Experience (Months 5-9)</h3>
+                        <div class="timeline">Duration: 5 months | Effort: 15-20 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Gain hands-on team leadership experience and operational management</h4>
+
+                    <h4>Advanced Management Skills</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Hiring & Onboarding</h4>
+                            <p>Recruitment, interviewing, offer negotiation, new hire onboarding, ramp planning</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Strategic Planning</h4>
+                            <p>Support strategy, capacity planning, service improvement, roadmap development</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Budget Management</h4>
+                            <p>Budget planning, cost control, resource allocation, tool/vendor management</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Cross-Functional Leadership</h4>
+                            <p>Collaboration with engineering, product, sales, success teams; escalation management</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Secure Team Lead, Senior Support Engineer, or Support Specialist III role with leadership responsibilities</span></li>
+                        <li><input type="checkbox"> <span>Lead a team of 3-5 support engineers (formally or informally); conduct regular one-on-ones</span></li>
+                        <li><input type="checkbox"> <span>Participate in hiring: screen candidates, conduct technical interviews, provide hiring recommendations</span></li>
+                        <li><input type="checkbox"> <span>Develop and deliver technical training for support team: new product features, troubleshooting techniques</span></li>
+                        <li><input type="checkbox"> <span>Own support metrics dashboard: track KPIs, identify trends, present insights to management</span></li>
+                        <li><input type="checkbox"> <span>Lead 2-3 operational improvement projects: reduce handle time, improve CSAT, enhance knowledge base</span></li>
+                        <li><input type="checkbox"> <span>Master support tools: ticketing systems (Zendesk, ServiceNow, Freshdesk), CRM, analytics platforms</span></li>
+                        <li><input type="checkbox"> <span>Complete ITIL Foundation certification (IT Service Management framework)</span></li>
+                        <li><input type="checkbox"> <span>Build relationships with Product and Engineering: advocate for customer needs, escalate systemic issues</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Lead team of 3-5 engineers successfully</div>
+                        <div class="milestone-item">Deliver measurable operational improvement</div>
+                        <div class="milestone-item">Earn ITIL Foundation or equivalent certification</div>
+                        <div class="milestone-item">Receive positive feedback from team and management</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.axelos.com/certifications/itil-service-management/itil-4-foundation" target="_blank">ITIL 4 Foundation Certification - AXELOS</a></li>
+                            <li><a href="https://www.zendesk.com/blog/category/customer-service-leadership/" target="_blank">Customer Service Leadership - Zendesk Blog</a></li>
+                            <li><a href="https://www.coursera.org/learn/wharton-operations-analytics" target="_blank">Operations Analytics - Wharton/Coursera</a></li>
+                            <li><a href="https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884" target="_blank">High Output Management by Andy Grove</a></li>
+                            <li><a href="https://www.service-quality.net" target="_blank">Service Quality Institute - Customer Service Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 3: Management Transition (Months 10-15)</h3>
+                        <div class="timeline">Duration: 6 months | Effort: 15-20 hours/week</div>
+                    </div>
+
+                    <h4>Goal: Secure Technical Support Manager role and establish leadership</h4>
+
+                    <h4>Strategic Management Skills</h4>
+                    <div class="key-skills">
+                        <div class="skill-card">
+                            <h4>Support Strategy</h4>
+                            <p>Service design, channel strategy, self-service enablement, support model design</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Customer Experience</h4>
+                            <p>Journey mapping, CSAT/NPS programs, voice of customer, experience optimization</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Team Development</h4>
+                            <p>Career development, succession planning, skills gap analysis, talent retention</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Executive Presence</h4>
+                            <p>Executive communication, board reporting, business case presentation, influence</p>
+                        </div>
+                    </div>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Apply for Technical Support Manager, Customer Support Manager, or Support Team Lead roles</span></li>
+                        <li><input type="checkbox"> <span>Update resume highlighting leadership experience, operational improvements, team development</span></li>
+                        <li><input type="checkbox"> <span>Build comprehensive portfolio: metrics dashboards, process improvements, team achievements</span></li>
+                        <li><input type="checkbox"> <span>Prepare for management interviews: behavioral questions, leadership scenarios, conflict resolution cases</span></li>
+                        <li><input type="checkbox"> <span>Consider advanced certifications: ITIL Practitioner, HDI Support Center Manager, Customer Service Management</span></li>
+                        <li><input type="checkbox"> <span>Develop support strategy proposal: self-service expansion, knowledge management, automation opportunities</span></li>
+                        <li><input type="checkbox"> <span>Build business case for support improvement initiative with ROI and resource requirements</span></li>
+                        <li><input type="checkbox"> <span>Network with other Support Managers: join communities (Support Driven, SupportOps), attend conferences</span></li>
+                        <li><input type="checkbox"> <span>Demonstrate measurable impact: reduced escalations, improved CSAT, faster resolution times</span></li>
+                    </ul>
+
+                    <div class="milestones">
+                        <h4>Key Milestones</h4>
+                        <div class="milestone-item">Secure Technical Support Manager role</div>
+                        <div class="milestone-item">Manage team of 5-10+ support engineers</div>
+                        <div class="milestone-item">Own support budget and resource planning</div>
+                        <div class="milestone-item">Deliver strategic support improvements</div>
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.thinkhdi.com/certification/support-center-manager" target="_blank">HDI Support Center Manager Certification</a></li>
+                            <li><a href="https://supportdriven.com" target="_blank">Support Driven Community - Slack & Resources</a></li>
+                            <li><a href="https://www.glassdoor.com/Interview/technical-support-manager-interview-questions-SRCH_KO0,25.htm" target="_blank">Technical Support Manager Interview Questions - Glassdoor</a></li>
+                            <li><a href="https://www.gartner.com/en/customer-service-support" target="_blank">Customer Service & Support - Gartner Insights</a></li>
+                            <li><a href="https://customergauge.com/customer-experience-resources" target="_blank">Customer Experience Resources - CustomerGauge</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-header">
+                        <h3>Phase 4: Excellence & Growth (Months 16-18)</h3>
+                        <div class="timeline">Duration: 3+ months | Ongoing professional development</div>
+                    </div>
+
+                    <h4>Goal: Excel as Technical Support Manager and position for advancement</h4>
+
+                    <h4>Action Checklist</h4>
+                    <ul class="checklist">
+                        <li><input type="checkbox"> <span>Establish reputation for building high-performing support teams and operational excellence</span></li>
+                        <li><input type="checkbox"> <span>Drive strategic initiatives: AI/automation integration, omnichannel support, community programs</span></li>
+                        <li><input type="checkbox"> <span>Build talent pipeline: mentor emerging support leaders, develop succession plans</span></li>
+                        <li><input type="checkbox"> <span>Contribute to industry: speak at support conferences, publish articles, share best practices</span></li>
+                        <li><input type="checkbox"> <span>Expand scope: manage larger teams, multiple shifts/regions, specialized support functions</span></li>
+                        <li><input type="checkbox"> <span>Partner strategically with Product, Engineering, Sales, Customer Success for customer advocacy</span></li>
+                        <li><input type="checkbox"> <span>Explore advancement: Senior Support Manager, Director of Support, VP of Customer Operations</span></li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Long-Term Career Path:</strong>
+                        Technical Support Manager → Senior Support Manager → Director of Technical Support → VP of Customer Support → Chief Customer Officer
+                    </div>
+
+                    <div class="resources">
+                        <h4>Recommended Resources</h4>
+                        <ul>
+                            <li><a href="https://www.axelos.com/certifications/itil-service-management/itil-4-managing-professional" target="_blank">ITIL 4 Managing Professional - AXELOS</a></li>
+                            <li><a href="https://www.forrester.com/research/customer-service/" target="_blank">Customer Service Research - Forrester</a></li>
+                            <li><a href="https://www.linkedin.com/learning/paths/advance-as-a-customer-service-manager" target="_blank">Advance as a Customer Service Manager - LinkedIn Learning</a></li>
+                            <li><a href="https://hbr.org/topic/managing-people" target="_blank">Managing People - Harvard Business Review</a></li>
+                            <li><a href="https://www.gainsight.com/customer-success/resources/" target="_blank">Customer Success Resources - Gainsight</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Career Development Plan for TSE</strong> | Your journey from Technical Support Engineer to leadership excellence</p>
+        <p>Remember: Career transitions take time, persistence, and continuous learning. Focus on building skills, gaining experience, and creating measurable impact.</p>
+        <p style="margin-top: 16px;">Bookmark this page and track your progress using the checklists. Good luck on your career journey!</p>
+    </div>
+
+    <script>
+        function showRoadmap(path) {
+            // Hide all roadmap contents
+            const allRoadmaps = document.querySelectorAll('.roadmap-content');
+            allRoadmaps.forEach(roadmap => roadmap.classList.remove('active'));
+
+            // Remove active class from all cards
+            const allCards = document.querySelectorAll('.path-card');
+            allCards.forEach(card => card.classList.remove('active'));
+
+            // Show selected roadmap
+            const roadmapId = path + '-roadmap';
+            const selectedRoadmap = document.getElementById(roadmapId);
+            if (selectedRoadmap) {
+                selectedRoadmap.classList.add('active');
+                selectedRoadmap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Highlight selected card
+            event.target.closest('.path-card').classList.add('active');
+
+            // Save progress to localStorage
+            saveProgress();
+        }
+
+        // Handle checkbox changes
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'checkbox') {
+                const li = e.target.closest('li');
+                if (e.target.checked) {
+                    li.classList.add('completed');
+                } else {
+                    li.classList.remove('completed');
+                }
+                saveProgress();
+            }
+        });
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            const progress = {};
+            
+            checkboxes.forEach((checkbox, index) => {
+                progress[index] = checkbox.checked;
+            });
+            
+            try {
+                localStorage.setItem('careerPlanProgress', JSON.stringify(progress));
+            } catch (e) {
+                // localStorage not available in some contexts
+                console.log('Progress saving not available');
+            }
+        }
+
+        // Load progress from localStorage
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('careerPlanProgress');
+                if (saved) {
+                    const progress = JSON.parse(saved);
+                    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+                    
+                    checkboxes.forEach((checkbox, index) => {
+                        if (progress[index]) {
+                            checkbox.checked = true;
+                            checkbox.closest('li').classList.add('completed');
+                        }
+                    });
+                }
+            } catch (e) {
+                // localStorage not available
+                console.log('Progress loading not available');
+            }
+        }
+
+        // Load progress on page load
+        window.addEventListener('load', loadProgress);
+
+        // Auto-show first roadmap hint
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const firstCard = document.querySelector('.path-card');
+                if (firstCard && !document.querySelector('.roadmap-content.active')) {
+                    // Don't auto-show, let user select
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
